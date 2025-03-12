@@ -1,5 +1,5 @@
-ARG BASE_IMAGE=bazzite
-ARG BASE_TAG=testing
+ARG BASE_IMAGE
+ARG BASE_TAG
 
 FROM ghcr.io/ublue-os/${BASE_IMAGE}:${BASE_TAG}
 
