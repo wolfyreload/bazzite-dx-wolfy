@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bazzite:41
+FROM ghcr.io/ublue-os/bazzite:test
 
 COPY system_files /
 COPY build_files /tmp
