@@ -33,8 +33,16 @@ jobs:
       contents: read
       packages: write
       id-token: write
+    strategy:
+      matrix:
+        base_image: [bazzite, bazzite-gnome]
 
     steps:
+      - name: Define env.CONTAINER_TARGET
+        run: |
+          echo "CONTAINER_TARGET=${{ matrix.base_image }}-dx" >> $GITHUB_ENV
+          echo "BASE_IMAGE=${{ matrix.base_image }}" >> $GITHUB_ENV
+
       # These stage versions are pinned by https://github.com/renovatebot/renovate
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4

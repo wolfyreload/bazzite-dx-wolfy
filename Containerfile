@@ -1,4 +1,7 @@
-FROM ghcr.io/ublue-os/bazzite:testing
+ARG BASE_IMAGE=bazzite
+ARG BASE_TAG=testing
+
+FROM ghcr.io/ublue-os/${BASE_IMAGE}:${BASE_TAG}
 
 COPY system_files /
 COPY build_files /tmp
