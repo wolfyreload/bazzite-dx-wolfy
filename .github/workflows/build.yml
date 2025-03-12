@@ -103,7 +103,6 @@ jobs:
         id: build_image
         run: |
           sudo buildah build \
-            --target ${{ env.CONTAINER_TARGET }} \
             --build-arg BASE_IMAGE=${{ env.BASE_IMAGE }} \
             --build-arg BASE_TAG=${{ env.BASE_TAG }} \
             --tag raw-img .
